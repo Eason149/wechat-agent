@@ -1,0 +1,77 @@
+{
+  "agent": {
+    "name": "小深",
+    "baseUrl": "https://api.deepseek.com",
+    "apiKeyEnv": "DEEPSEEK_API_KEY",
+    "model": "deepseek-chat",
+    "temperature": 1.15,
+    "maxTokens": 360,
+    "timeoutMs": 45000,
+    "personaFile": "persona.md",
+    "backend": "api",
+    "dsh": {
+      "cwd": "./agent-workspace",
+      "timeoutMs": 240000
+    },
+    "tone": "neutral",
+    "toneExtra": ""
+  },
+  "behavior": {
+    "trigger": {
+      "mentions": true,
+      "keywords": [
+        "小深",
+        "@机器人",
+        "问问小深"
+      ],
+      "whitelistGroups": [],
+      "whitelistReplyProbability": 0,
+      "ignoreSenders": [],
+      "minTextLength": 1
+    },
+    "limits": {
+      "perGroupCooldownMs": 10000,
+      "maxRepliesPerMinute": 5,
+      "maxRepliesPerHour": 60,
+      "maxContextMessages": 24,
+      "contextTtlMinutes": 180,
+      "staleMessageMs": 60000
+    },
+    "style": {
+      "splitMessages": true,
+      "maxCharsPerMessage": 160,
+      "typingDelayMs": [
+        500,
+        1600
+      ],
+      "disclosure": ""
+    },
+    "memory": {
+      "enabled": true,
+      "maxContextMessages": 24,
+      "contextTtlMinutes": 180
+    }
+  },
+  "panel": {
+    "enabled": true,
+    "port": 7788,
+    "openBrowser": true
+  },
+  "channel": {
+    "type": "mock",
+    "wechaty": {
+      "puppet": "wechaty-puppet-padlocal",
+      "tokenEnv": "WECHATY_PUPPET_PADLOCAL_TOKEN",
+      "name": "wechat-agent"
+    },
+    "macos": {
+      "room": "",
+      "pollMs": 3000,
+      "readMode": "ocr",
+      "dryRun": false
+    }
+  },
+  "storage": {
+    "dir": "./data"
+  }
+}

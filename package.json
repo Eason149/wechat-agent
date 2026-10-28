@@ -1,0 +1,30 @@
+{
+  "name": "wechat-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "把 DeepSeek Harness 的对话能力接入微信/企微群：可插拔通道 + 触发策略 + 记忆 + 限流",
+  "bin": {
+    "wechat-agent": "./src/cli.mjs"
+  },
+  "scripts": {
+    "init": "node src/cli.mjs init",
+    "doctor": "node src/cli.mjs doctor",
+    "chat": "node src/cli.mjs chat",
+    "selftest": "node --test test/*.test.mjs",
+    "start": "node src/cli.mjs run",
+    "panel": "node src/cli.mjs run --config config.json",
+    "dev": "node scripts/mock-model-server.mjs 8099 & node src/cli.mjs chat"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "optionalDependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "wechaty": "^1.20.2",
+    "wechaty-puppet-padlocal": "^1.20.0"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh": "^0.2.1-rc.2"
+  }
+}

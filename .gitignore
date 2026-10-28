@@ -1,0 +1,43 @@
+# 运行时依赖 / 本地工具链
+node_modules/
+.tools/
+
+# 隐私：绝不能提交
+secrets.env
+config.json
+persona.md
+data/
+*.log
+*.json.tmp-*
+
+# 系统垃圾
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+
+# Credentials and private runtime files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.db
+*.sqlite*
+*.bak
+*.backup
+config.local.*
+persona.local.*
+secrets.*
+!secrets.env.example
+memory/
+memories/
+sessions/
+logs/
+screenshots/
+.dsh/
+.codex/
+agent-workspace/*
+!agent-workspace/README.md
